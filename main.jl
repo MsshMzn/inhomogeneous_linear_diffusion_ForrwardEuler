@@ -193,7 +193,7 @@ function run_simulation()
 
     rate_list = fill(10000.0, length(RealTime))
     for num in 1:(length(RealTime) - 1)
-        if Dissipation_RealTime[num] > 0.00001
+        if Dissipation_RealTime[num] > 1e-6
             rate_list[num] = (log10(Dissipation_RealTime[num]) - log10(Dissipation_RealTime[num + 1] + 1e-15)) / (mod_time * dt)
         end
     end
